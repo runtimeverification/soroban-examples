@@ -35,7 +35,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "hello_world: hello(\"Soroban\")",
       "transactions": [
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "logging: hello(friend)",
       "transactions": [
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "increment: third increment (2 -> 3)",
       // The counter is instance storage, so the two earlier calls are what make
@@ -67,7 +67,7 @@
       "trace": "last"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "increment_with_fuzz: second increment (1 -> 2)",
       "transactions": [
@@ -77,7 +77,7 @@
       ]
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "alloc: sum(12)",
       "transactions": [
@@ -86,7 +86,7 @@
       ]
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "events: increment publishes COUNTER/increment",
       "transactions": [
@@ -96,7 +96,7 @@
       ]
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "custom_types: increment(7) on a State{count:5}",
       "transactions": [
@@ -108,7 +108,7 @@
       "trace": "second_incr"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "errors: sixth increment reverts (LimitReached)",
       // MAX is 5, so the traced (sixth) call is the one that returns
@@ -125,7 +125,7 @@
       "trace": "last"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "eth_abi: exec(abi.encode(bytes32,uint256,uint256))",
       // input = abi.encode(a = bytes32("soroban"), b = 1e18, c = 2e18);
@@ -143,7 +143,7 @@
       ]
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "ttl: extend_persistent after setup",
       // `setup` must run first: the persistent entry has to exist before its
@@ -158,7 +158,7 @@
       "trace": "extend_persistent"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "auth: increment(user, 5) on a counter of 5",
       "transactions": [
@@ -174,7 +174,7 @@
       ]
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "pause: set(true)",
       "transactions": [
@@ -186,7 +186,7 @@
       "trace": "pause_on"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "increment_with_pause: increment while unpaused",
       // Two contracts: the counter cross-calls the pause contract's `paused()`
@@ -203,7 +203,7 @@
       ]
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "increment_with_pause: increment while paused (reverts)",
       "transactions": [
@@ -220,7 +220,7 @@
       "trace": "last"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "cross_contract: contract_b.add_with(contract_a, 1985, 40)",
       // contract_b `contractimport!`s contract_a's built wasm, so contract_a
@@ -236,7 +236,7 @@
       ]
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "workspace: contract_b.add_with(contract_a, 12, 30)",
       // Both crates are members of workspace/Cargo.toml, so cargo would put
@@ -261,7 +261,7 @@
       ]
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "deployer: factory deploys a contract on its own behalf",
       // NOTE: the traced `deploy` calls the `create_contract_with_constructor`
@@ -293,7 +293,7 @@
       ]
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "deployer: the deployed contract's __constructor(42)",
       "transactions": [
@@ -307,7 +307,7 @@
       "trace": "ctor"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "upgradeable_contract: upgrade v1 -> v2",
       // Deploying new_contract uploads its wasm so the old contract can point
@@ -331,7 +331,7 @@
       "trace": "the_upgrade"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "token: transfer_from spends an allowance",
       "transactions": [
@@ -374,7 +374,7 @@
       "trace": "last"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "timelock: claim a deposited balance",
       "transactions": [
@@ -412,7 +412,7 @@
       "trace": "last"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "fuzzing: partial claim of a timelocked balance",
       // The fuzzing example is the timelock contract with a claimable amount,
@@ -449,7 +449,7 @@
       "trace": "last"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "single_offer: trade against a 10:1 offer",
       // The seller creates the offer, funds the contract with sell tokens, then
@@ -504,7 +504,7 @@
       "trace": "last"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "liquidity_pool: swap 10 USDC-worth out of the pool",
       // The pool's constructor requires token_a < token_b (address order). The
@@ -553,7 +553,7 @@
       "trace": "last"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "atomic_swap: swap 100 A for 500 B",
       // Both parties authorize their own half of the swap; here one account
@@ -595,7 +595,7 @@
       "trace": "last"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "atomic_multiswap: batch two A-sellers against two B-sellers",
       // multi_swap price-matches the two sides and calls `swap` on the
@@ -642,7 +642,7 @@
       "trace": "last"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "mint-lock: minter mints within its epoch limit",
       // The token's admin is the mint-lock contract, so mint-lock is what may
@@ -689,7 +689,7 @@
       "trace": "last"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "merkle_distribution: claim an airdrop with a Merkle proof",
       // Root, index, receiver, amount and proof are the committed test vectors
@@ -733,7 +733,7 @@
       "trace": "last"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "deep_contract_auth: A -> B -> C with pre-authorized sub-invocation",
       // All three contracts live in the same crate, so the same wasm is
@@ -752,7 +752,7 @@
       ]
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "other_custom_types: complex_struct round-trip",
       // One call per interesting type: struct, numeric enum (RoyalCard::Queen =
@@ -796,7 +796,7 @@
       "trace": "last"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "account: __check_auth with all three signers",
       // A custom account contract's entry point is `__check_auth`, which the
@@ -843,7 +843,7 @@
       "trace": "last"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "simple_account: __check_auth verifies the owner's signature",
       "transactions": [
@@ -864,7 +864,7 @@
       "trace": "last"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "multisig_1_of_n_account: one of three signers authenticates",
       "transactions": [
@@ -894,7 +894,7 @@
       "trace": "last"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "modular_account: __check_auth with no delegates (reverts)",
       // This account delegates authentication to other addresses, and the
@@ -926,7 +926,7 @@
       "trace": "last"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "bls_signature: __check_auth verifies an aggregate BLS signature",
       // agg_pk is the sum of the ten G1 public keys in src/test.rs; agg_sig is
@@ -950,7 +950,7 @@
       "trace": "last"
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "groth16_verifier: verify_proof for a*b=c (public c = 33)",
       // Verifying key, proof and public signal are the committed circuit
@@ -975,7 +975,7 @@
       ]
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "import_ark_bn254: mock_verify pairs two BN254 points",
       // The two points are the ark-serialized G1/G2 points from src/test.rs, so
@@ -994,7 +994,7 @@
       ]
     },
     {
-      "type": "soroban",
+      "type": "stellar",
       "request": "launch",
       "name": "privacy-pools: withdraw with a valid zero-knowledge proof",
       // Groth16 verification over BLS12-381 is expensive, so give the node
